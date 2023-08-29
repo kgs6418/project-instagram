@@ -15,7 +15,7 @@ require('./db/conn.js')
 app.use(express.json());
 
 app.use(cors({
-  origin: ['https://client-instagram.vercel.app'],
+  origin: '*',
   methods: ['POST', 'GET'],
   credentials: true
 }));
