@@ -13,7 +13,7 @@ const [password,setPassword]= useState("");
 const loginuser = async(e) =>{
   e.preventDefault();
 
-  const res = await fetch('http://localhost:8080/login' ,{
+  const res = await fetch('https://project-instagram-server.vercel.app/login' ,{
     method:"POST",   
     headers:{'Content-Type': 'application/json'},
     credentials:'include',
