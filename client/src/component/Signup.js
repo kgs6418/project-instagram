@@ -24,7 +24,7 @@ const Signup = () => {
 
       const{name, username, email, password, bio} = user;
 
-      const res = await fetch('http://localhost:8080/register' , {
+      const res = await fetch('https://project-instagram-server.vercel.app/register' , {
          method: "POST",
          credentials:'include',
          headers:{'Content-Type': 'application/json'},
