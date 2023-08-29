@@ -6,7 +6,7 @@ const About = () => {
 
   const callAboutPage = async (req,res)=>{
     try {
-      const res = await fetch('http://localhost:8080/about' , {
+      const res = await fetch('https://project-instagram-server.vercel.app/about' , {
         method:'GET',
         headers: {
           'Content-Type': 'application/json'
