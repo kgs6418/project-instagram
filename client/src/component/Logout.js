@@ -4,7 +4,7 @@ const Logout = () => {
     const navigate = useNavigate();
     // we are using promices;
     useEffect(()=>{
-        fetch(https://project-instagram-server.vercel.app/logout' ,{
+        fetch('https://project-instagram-server.vercel.app/logout' ,{
             method:"GET",
             headers: {
                 'Content-Type': 'application/json'
