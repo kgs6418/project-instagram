@@ -5,20 +5,12 @@ const app = express();
 const User= require('./model/userSchema.js')
 const cors = require('cors')
 
-
-
 //path for .env file
 dotenv.config({path:'./.env'})
 //database connection
 require('./db/conn.js')
 
 app.use(express.json());
-
-// app.use(cors({
-//   origin: '*',
-//   methods: ['POST', 'GET'],
-//   credentials: true
-// }));
 
 app.use(function (req, res, next) {
 res.setHeader('Access-Control-Allow-Origin', '*');
@@ -29,8 +21,6 @@ next();
 });
 
 app.use(require('./router/auth.js'))
-
-
 
 const PORT = process.env.PORT || 8000;
 
