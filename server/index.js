@@ -16,7 +16,7 @@ app.use(express.json());
 
 app.use(cors({
   origin:'https://client-instagram.vercel.app/login',
-  method: ['POST', 'GET'],
+  methods: ['POST', 'GET'],
   credentials: true
 }))
 
