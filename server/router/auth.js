@@ -3,6 +3,7 @@ const router = express.Router()
 const bcrypt = require('bcrypt')
 const cookieParser =require("cookie-parser");
 const jwt = require('jsonwebtoken')
+const cors = require('cors')
 
 const authenticate = require("../middleware/authenticate")
 
@@ -14,6 +15,11 @@ const User = require('../model/userSchema.js')  //requiring this to store data i
 router.get('/',(req,res) =>{
     res.send("hello GAURAV from router")
 })
+app.use(function (req, res, next) {
+res.setHeader('Access-Control-Allow-Origin', 'https://client-instagram.vercel.app');
+res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+res.setHeader('Access-Control-Allow-Credentials', true);
 
 //using promise: 
 // router.post('/register',(req,res)=>{
