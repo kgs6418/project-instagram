@@ -15,6 +15,7 @@ require('./db/conn.js')
 app.use(express.json());
 app.use(cors({
     origin: '*',
+    Vary: 'Origin',
   methods: ['GET', 'POST'],
   headers: 'Content-Type',
   credentials: true
