@@ -14,6 +14,7 @@ const loginuser = async(e) =>{
   e.preventDefault();
 
   const res = await fetch('https://project-instagram-server.vercel.app/login' ,{
+     mode: 'cors',
     method:"POST",   
     headers:{'Content-Type': 'application/json'},
     credentials:'include',
