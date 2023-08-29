@@ -17,7 +17,7 @@ app.use(express.json());
 app.use((req, res, next) => {
   const allowedOrigins = [
     'https://client-instagram.vercel.app',
-       'https://client-instagram.vercel.app/login'
+    'https://client-instagram.vercel.app/login'
   ];
 
   const origin = req.headers.origin;
