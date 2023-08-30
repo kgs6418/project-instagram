@@ -91,9 +91,10 @@ router.post('/login',async(req,res)=>{
             return res.status(400).json({error:"please enter your the username and password"})
            
         }
-         return res.status(200).json({message:"login successfull"})
         //checking for username
-        // const userLogin = await User.findOne({username:username});
+        const userLogin = await User.findOne({username:username});
+        
+         return res.status(200).json({message:"login successfull"})
         // //if username is matched with the database  then we will match the password for that username with the entered password.
         // if (userLogin) {
         //             const passwordMatch = await bcrypt.compare(password,userLogin.password);
