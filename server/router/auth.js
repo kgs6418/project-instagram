@@ -89,37 +89,38 @@ router.post('/login',async(req,res)=>{
 
         if(!username || !password){
             return res.status(400).json({error:"please enter your the username and password"})
+           
         }
-        
+         return res.status(200).json({message:"login successfull"})
         //checking for username
-        const userLogin = await User.findOne({username:username});
-        //if username is matched with the database  then we will match the password for that username with the entered password.
-        if (userLogin) {
-                    const passwordMatch = await bcrypt.compare(password,userLogin.password);
+        // const userLogin = await User.findOne({username:username});
+        // //if username is matched with the database  then we will match the password for that username with the entered password.
+        // if (userLogin) {
+        //             const passwordMatch = await bcrypt.compare(password,userLogin.password);
 
-                    //jwt token generation.
-                     token = await userLogin.generateAuthToken();
-                    console.log(token)
+        //             //jwt token generation.
+        //              token = await userLogin.generateAuthToken();
+        //             console.log(token)
 
-                    //storing jwt token in cookie.
-                    res.cookie("jwtoken",token,{
-                        expires: new Date(Date.now()+25892000000),
-                        httpOnly:true
+        //             //storing jwt token in cookie.
+        //             res.cookie("jwtoken",token,{
+        //                 expires: new Date(Date.now()+25892000000),
+        //                 httpOnly:true
                         
-                    });
+        //             });
 
 
                     
-                    if(!passwordMatch){
-                         return res.status(400).json({message:"Invalid Credentials"})
-                        }else{
-                            return res.status(200).json({message:"login successfull"})
-                        }
+        //             if(!passwordMatch){
+        //                  return res.status(400).json({message:"Invalid Credentials"})
+        //                 }else{
+        //                     return res.status(200).json({message:"login successfull"})
+        //                 }
                 
       
-        } else {
-            return res.status(400).json({message:" error ==> Invalid Credentials"})
-        }
+        // } else {
+        //     return res.status(400).json({message:" error ==> Invalid Credentials"})
+        // }
       
     } catch (error) {
         
