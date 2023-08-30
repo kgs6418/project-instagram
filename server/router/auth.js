@@ -91,8 +91,10 @@ router.post('/login',async(req,res)=>{
             return res.status(400).json({error:"please enter your the username and password"})
            
         }
+         console.log("pahunch gaya");
         //checking for username
         const userLogin = await User.findOne({username:username});
+        console.log("hello ji");
         
         
         // //if username is matched with the database  then we will match the password for that username with the entered password.
